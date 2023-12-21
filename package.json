@@ -1,0 +1,17 @@
+{
+  "name": "project_to_d0_list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "exprss": "^0.0.1-security",
+    "moongose": "^1.0.0"
+  }
+}
