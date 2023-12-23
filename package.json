@@ -5,14 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-   
     "start": "Server.js",
-    "dev":"nodemon Server.js"
+    "dev": "nodemon Server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "exprss": "^0.0.1-security",
     "moongose": "^1.0.0"
   }
