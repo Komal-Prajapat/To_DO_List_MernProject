@@ -14,7 +14,7 @@ app.use(cors({
     methods:["GET","POST","PUT","DELETE"],
     credentials:true
 }))
-
+  
 mongoose.connect(
     "mongodb+srv://komalprajapat267:1SqXaaRyOH1STqSt@komal.fjcbbzw.mongodb.net/",{
     dbName:'Contact_Keeper'
