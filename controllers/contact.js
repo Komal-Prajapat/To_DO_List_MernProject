@@ -1,21 +1,28 @@
 import { Contact } from '../Models/Contact.js';
 
-export const addcontact = async(req, res) => {
-    console.log("add Contact is working ");
-    // const contactName = req.body.name; 
-    //     console.log(contactName);
-        // console.log(req.body)
-        const {name,gmail,phone,ctype}  =req.body;
-        let contact = await Contact.findOne({gmail});
-        let phonenumber = await Contact.findOne({phone});
-        if(contact||phone) return res.json({message:"Contact Already Exist ..."});
+export const addcontact = async (req, res) => {
+    try {
+        console.log("add Contact is working ");
 
-         contact = await Contact.create({name,gmail,phone,ctype})
+        const { name, gmail, phone, ctype } = req.body;
+        let contact = await Contact.findOne({ gmail });
+        let phonenumber = await Contact.findOne({ phone });
 
-        res.json({message:"Contact Saved ..."})
+        if (contact || phonenumber) {
+            return res.json({ message: "Contact Already Exist ..." });
+        }
+
+        contact = await Contact.create({ name, gmail, phone, ctype });
+
+        res.json({ message: "Contact Saved ..." });
+    } catch (error) {
+        console.error("Error adding contact:", error);
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+};
 
 
-}
+
 export const getcontact =  async  (req , res)=>{
     const contacts = await Contact.find();
     res.json({message:"Fetched all contacts" ,contacts});

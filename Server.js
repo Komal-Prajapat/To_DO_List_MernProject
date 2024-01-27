@@ -13,10 +13,11 @@ config({
     path:'.env'
 })
 app.use(cors({
-    origin:process.env.FRONTEND_URL,
-    methods:["GET","POST","PUT","DELETE"],
-    credentials:true
-}))
+    origin: process.env.FRONTEND_URL,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
+
   
 mongoose.connect(
     process.env.MONGO_URL,{
